@@ -41,6 +41,7 @@
   "devDependencies": {
     "package-preamble": "~0.1.0",
     "rollup": "~0.47.4",
+    "rollup-plugin-commonjs": "^8.1.0",
     "rollup-plugin-node-resolve": "^3.0.0",
     "rollup-watch": "^4.3",
     "uglify-js-es6": "^2.8.9"
