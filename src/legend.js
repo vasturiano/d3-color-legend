@@ -1,5 +1,7 @@
 import * as d3 from 'd3';
 import Kapsule from 'kapsule';
+import ContinuousLegend from './continuous-legend.js'
+import DiscreteLegend from './discrete-legend.js'
 
 export default Kapsule({
     props: {
@@ -20,7 +22,7 @@ export default Kapsule({
 
         state.legend.html(''); // Wipe it
 
-        (ordinal?OrdinalColorLegend:LinearColorLegend)()
+        (ordinal?DiscreteLegend:ContinuousLegend)()
             .width(state.width)
             .height(state.height)
             .scale(state.scale)
