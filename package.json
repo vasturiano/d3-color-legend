@@ -1,0 +1,27 @@
+{
+  "name": "d3-color-legend",
+  "version": "1.0.0",
+  "description": "SVG color legends for continuous or discrete D3 scales",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/vasturiano/d3-color-legend.git"
+  },
+  "keywords": [
+    "D3",
+    "legend",
+    "color",
+    "discrete",
+    "continuous",
+    "scales"
+  ],
+  "author": "Vasco Asturiano <vastur@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/vasturiano/d3-color-legend/issues"
+  },
+  "homepage": "https://github.com/vasturiano/d3-color-legend#readme"
+}
