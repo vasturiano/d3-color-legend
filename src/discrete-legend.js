@@ -1,4 +1,4 @@
-import * as d3 from 'd3';
+import { select as d3Select } from 'd3-selection';
 import Kapsule from 'kapsule';
 import tinycolor from 'tinycolor2';
 import { fitToBox as TextFitToBox } from 'svg-text-fit';
@@ -11,7 +11,7 @@ export default Kapsule({
         label: {}
     },
     init(el, state) {
-        state.el = d3.select(el);
+        state.el = d3Select(el);
     },
     update(state) {
         const colorBinWidth = state.width / state.scale.domain().length;

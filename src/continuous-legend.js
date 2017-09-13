@@ -1,4 +1,4 @@
-import * as d3 from 'd3';
+import { select as d3Select } from 'd3-selection';
 import Kapsule from 'kapsule';
 import tinycolor from 'tinycolor2';
 import { fitToBox as TextFitToBox } from 'svg-text-fit';
@@ -14,7 +14,7 @@ export default Kapsule({
     init(el, state) {
         state.gradient = Gradient()(el);
 
-        state.el = d3.select(el);
+        state.el = d3Select(el);
 
         // Build dom
         state.box = state.el.append('rect')

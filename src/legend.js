@@ -1,4 +1,4 @@
-import * as d3 from 'd3';
+import { select as d3Select } from 'd3-selection';
 import Kapsule from 'kapsule';
 import ContinuousLegend from './continuous-legend.js'
 import DiscreteLegend from './discrete-legend.js'
@@ -11,7 +11,7 @@ export default Kapsule({
         label: {}
     },
     init(el, state) {
-        state.legend = d3.select(el).append('g')
+        state.legend = d3Select(el).append('g')
             .attr('class', 'legend');
     },
     update(state) {
