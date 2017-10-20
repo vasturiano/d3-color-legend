@@ -1,6 +1,7 @@
 import nodeResolve from 'rollup-plugin-node-resolve';
 import commonJs from 'rollup-plugin-commonjs';
 import babel from 'rollup-plugin-babel';
+import { name, homepage, version } from './package.json';
 
 export default {
     input: 'src/index.js',
@@ -10,10 +11,6 @@ export default {
             name: 'ColorLegend',
             file: 'dist/d3-color-legend.js',
             sourcemap: true
-        },
-        {
-            format: 'es',
-            file: 'dist/d3-color-legend.mjs'
         }
     ],
     plugins: [
@@ -26,5 +23,6 @@ export default {
             plugins: ["external-helpers"],
             babelrc: false
         })
-    ]
+    ],
+    banner: `// Version ${version} ${name} - ${homepage}`
 };
