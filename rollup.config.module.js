@@ -1,20 +1,20 @@
 import babel from 'rollup-plugin-babel';
+import { name, dependencies } from './package.json';
 
 export default {
     input: 'src/index.js',
     output: [
         {
+            format: 'cjs',
+            file: `dist/${name}.common.js`
+        },
+        {
             format: 'es',
-            file: 'dist/d3-color-legend.mjs'
+            file: `dist/${name}.mjs`
         }
     ],
+    external: Object.keys(dependencies),
     plugins: [
-        babel({
-            presets: [
-                ["es2015", { "modules": false }]
-            ],
-            plugins: ["external-helpers"],
-            babelrc: false
-        })
+        babel()
     ]
 };

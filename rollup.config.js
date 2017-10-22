@@ -9,20 +9,14 @@ export default {
         {
             format: 'umd',
             name: 'ColorLegend',
-            file: 'dist/d3-color-legend.js',
+            file: `dist/${name}.js`,
             sourcemap: true
         }
     ],
     plugins: [
         nodeResolve(),
         commonJs(),
-        babel({
-            presets: [
-                ["es2015", { "modules": false }]
-            ],
-            plugins: ["external-helpers"],
-            babelrc: false
-        })
+        babel({ exclude: 'node_modules/**' })
     ],
     banner: `// Version ${version} ${name} - ${homepage}`
 };
