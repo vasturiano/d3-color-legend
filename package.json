@@ -4,7 +4,7 @@
   "description": "SVG color legends for continuous or discrete D3 scales",
   "unpkg": "dist/d3-color-legend.min.js",
   "main": "dist/d3-color-legend.common.js",
-  "module": "dist/d3-color-legend.mjs",
+  "module": "dist/d3-color-legend.module.js",
   "scripts": {
     "build": "rm -rf dist && mkdir dist && rollup -c",
     "watch": "rollup -c -w",
