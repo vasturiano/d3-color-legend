@@ -7,10 +7,10 @@
   "module": "dist/d3-color-legend.module.js",
   "scripts": {
     "build": "rm -rf dist && mkdir dist && rollup -c",
-    "watch": "rollup -c -w",
-    "minify": "uglifyjs dist/d3-color-legend.js -o dist/d3-color-legend.min.js -c -m --comments '/Version/'",
+    "dev": "rollup -c -w",
+    "minify": "terser dist/d3-color-legend.js -o dist/d3-color-legend.min.js -c -m --comments '/Version/'",
     "build-module": "rollup -c rollup.config.module.js",
-    "prepublish": "npm run build && npm run minify && npm run build-module"
+    "prepare": "npm run build && npm run minify && npm run build-module"
   },
   "repository": {
     "type": "git",
@@ -33,24 +33,26 @@
     "url": "https://github.com/vasturiano/d3-color-legend/issues"
   },
   "homepage": "https://github.com/vasturiano/d3-color-legend#readme",
+  "files": [
+    "dist/**/*"
+  ],
   "dependencies": {
-    "d3-selection": "^1.1.0",
-    "kapsule": "^1.7.8",
-    "svg-text-fit": "^1.1.4",
-    "svg-utils": "^1.2.5",
+    "d3-selection": "^1.4.1",
+    "kapsule": "^1.12.2",
+    "svg-text-fit": "^1.1.5",
+    "svg-utils": "^1.2.6",
     "tinycolor2": "^1.4.1"
   },
   "devDependencies": {
-    "babel-core": "^6.26.0",
-    "babel-plugin-external-helpers": "^6.22.0",
-    "babel-plugin-transform-class-properties": "^6.24.1",
-    "babel-plugin-transform-object-rest-spread": "^6.26.0",
-    "babel-preset-env": "^1.6.1",
-    "rollup": "^0.50.0",
-    "rollup-plugin-babel": "^3.0.2",
-    "rollup-plugin-commonjs": "^8.2.4",
-    "rollup-plugin-node-resolve": "^3.0.0",
-    "rollup-watch": "^4.3.1",
-    "uglify-js": "^3.1.5"
+    "@babel/core": "^7.8.7",
+    "@babel/plugin-proposal-class-properties": "^7.8.3",
+    "@babel/plugin-proposal-object-rest-spread": "^7.8.3",
+    "@babel/preset-env": "^7.8.7",
+    "@rollup/plugin-commonjs": "^11.0.2",
+    "@rollup/plugin-node-resolve": "^7.1.1",
+    "rimraf": "^3.0.2",
+    "rollup": "^2.0.6",
+    "rollup-plugin-babel": "^4.4.0",
+    "terser": "^4.6.6"
   }
 }

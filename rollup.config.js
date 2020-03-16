@@ -1,5 +1,5 @@
-import nodeResolve from 'rollup-plugin-node-resolve';
-import commonJs from 'rollup-plugin-commonjs';
+import resolve from '@rollup/plugin-node-resolve';
+import commonJs from '@rollup/plugin-commonjs';
 import babel from 'rollup-plugin-babel';
 import { name, homepage, version } from './package.json';
 
@@ -10,13 +10,13 @@ export default {
             format: 'umd',
             name: 'ColorLegend',
             file: `dist/${name}.js`,
-            sourcemap: true
+            sourcemap: true,
+            banner: `// Version ${version} ${name} - ${homepage}`
         }
     ],
     plugins: [
-        nodeResolve(),
+        resolve(),
         commonJs(),
         babel({ exclude: 'node_modules/**' })
-    ],
-    banner: `// Version ${version} ${name} - ${homepage}`
+    ]
 };
