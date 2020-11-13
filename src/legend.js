@@ -18,11 +18,11 @@ export default Kapsule({
         if (!state.scale) return;
 
         // Check if ordinal or continuous scale
-        const ordinal = state.scale.hasOwnProperty('unknown'); // Only ordinal scales have the unknown method (for auto-assigning new categories)
+        const isOrdinal = !state.scale.hasOwnProperty('invert'); // Only continuous scales can be inverted
 
         state.legend.html(''); // Wipe it
 
-        (ordinal?DiscreteLegend:ContinuousLegend)()
+        (isOrdinal?DiscreteLegend:ContinuousLegend)()
             .width(state.width)
             .height(state.height)
             .scale(state.scale)
