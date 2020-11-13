@@ -18,7 +18,7 @@ export default Kapsule({
         if (!state.scale) return;
 
         // Check if ordinal or continuous scale
-        const isOrdinal = !state.scale.hasOwnProperty('invert'); // Only continuous scales can be inverted
+        const isOrdinal = !state.scale.hasOwnProperty('interpolate') && !state.scale.hasOwnProperty('interpolator'); // Only continuous scales can be interpolated
 
         state.legend.html(''); // Wipe it
 
