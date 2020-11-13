@@ -1,6 +1,6 @@
 {
   "name": "d3-color-legend",
-  "version": "1.3.0",
+  "version": "1.3.1",
   "description": "SVG color legends for continuous or discrete D3 scales",
   "unpkg": "dist/d3-color-legend.min.js",
   "main": "dist/d3-color-legend.common.js",
