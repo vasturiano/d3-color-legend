@@ -3,6 +3,7 @@
   "version": "1.4.2",
   "description": "SVG color legends for continuous or discrete D3 scales",
   "type": "module",
+  "jsdelivr": "dist/d3-color-legend.min.js",
   "unpkg": "dist/d3-color-legend.min.js",
   "main": "dist/d3-color-legend.mjs",
   "module": "dist/d3-color-legend.mjs",
